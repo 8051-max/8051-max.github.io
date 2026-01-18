@@ -14,7 +14,7 @@
 <meta property="og:description" content="前言建立一个独立博客和公众号的想法，最初源于科协学长和依门的指引。在2026年1月17日这个夜晚，我终于付诸行动，耗费数小时完成了从0到1的初建。这第一篇文章，既是对搭建全过程的回溯，也是对我所遇困难与解决思路的总结。以此为起点，开启我的记录之旅。 一、对 GitHub 的认识、 搭建博客中 GitHub 的作用与Hexo的认识1、什么是GitHub什么是GitHub呢？在写这篇博客之前我也不清楚">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-01-18T00:51:09.000Z">
-<meta property="article:modified_time" content="2026-01-18T15:33:10.504Z">
+<meta property="article:modified_time" content="2026-01-18T16:03:10.623Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="1">
 <meta property="article:tag" content="Hexo">
@@ -186,12 +186,11 @@
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:GitHub账号名称/GitHub账号名称.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
 
 <p><code>type: git</code>：<br>​含义：运输方式。<br>​解释：告诉 Hexo，使用 Git 协议来发货。这就激活了我们刚才安装的那个 hexo-deployer-git 插件。</p>
-<p><code>​repo: ...</code>：<br>​含义：收货地址。<br>​解释：<a href="mailto:&#103;&#x69;&#116;&#x40;&#103;&#105;&#116;&#104;&#117;&#x62;&#x2e;&#x63;&#111;&#x6d;">git@github.com</a>:github账号名称&#x2F;github账号名称.github.io.git 是我们 GitHub 仓库的 SSH 地址。这告诉插件：“把生成的网页文件，全部推送到 GitHub 上名为github账号名称的那个仓库里去。”</p>
+<p><code>​repo: ...</code>：<br>​含义：收货地址。<br>​解释：<a href="mailto:&#x67;&#105;&#x74;&#64;&#x67;&#x69;&#x74;&#104;&#x75;&#98;&#46;&#x63;&#x6f;&#x6d;">git@github.com</a>:github账号名称&#x2F;github账号名称.github.io.git 是我们 GitHub 仓库的 SSH 地址。这告诉插件：“把生成的网页文件，全部推送到 GitHub 上名为github账号名称的那个仓库里去。”</p>
 <p><code>​branch: main</code>：<br>​含义：货架&#x2F;分支。<br>​解释：告诉 GitHub，“请把这些文件放在 main 这个主分支上展示。”</p>
 <p>注意：type: 前面要有 2个空格 的缩进，冒号后面也要有 1个空格。直接复制上面这段最稳妥。<br>保存文件，然后关闭记事本。</p>
 <h3 id="4、-呼叫主程序并部署到网页"><a href="#4、-呼叫主程序并部署到网页" class="headerlink" title="4、 呼叫主程序并部署到网页"></a>4、 呼叫主程序并部署到网页</h3><p>输入 <code>hexo d</code></p>
-<p>当敲下回车后，Hexo 会指挥那个“快递员插件”</p>
-<p>（hexo-deployer-git）执行以下一系列复杂的连招：</p>
+<p>当敲下回车后，Hexo 会指挥那个“快递员插件”（hexo-deployer-git）执行以下一系列复杂的连招：</p>
 <p>​打包：它会找到 public 文件夹里所有刚刚生成好的 HTML 网页。</p>
 <p>​建立连接：它读取 _config.yml 里的地址，通过 SSH 协议连接到 GitHub。</p>
 <p>​推送 (Push)：它执行类似 git push 的操作，把这些文件强行推送到 GitHub 仓库的 main 分支。</p>
@@ -199,7 +198,7 @@
 <p>在之后写博客时，我们常用<code>hexo cl &amp;&amp; hexo g -d</code></p>
 <p>(先清理缓存 Clean，再生成 Generate，最后部署 Deploy。这是最干净、最不容易报错的流程。)</p>
 <h2 id="五、实际部署时遇到的两个报错"><a href="#五、实际部署时遇到的两个报错" class="headerlink" title="五、实际部署时遇到的两个报错"></a>五、实际部署时遇到的两个报错</h2><p>在配置完 _config.yml 后，我运行 <code>hexo d</code> 进行部署，期间遇到了两个报错。这里记录一下排查和解决的过程。</p>
-<h3 id="报错一：Permission-denied-权限被拒绝"><a href="#报错一：Permission-denied-权限被拒绝" class="headerlink" title="报错一：Permission denied (权限被拒绝)"></a>报错一：Permission denied (权限被拒绝)</h3><p>第一次执行部署命令时，终端报错：<a href="mailto:&#x67;&#x69;&#116;&#64;&#103;&#x69;&#116;&#104;&#117;&#98;&#46;&#x63;&#x6f;&#x6d;">git@github.com</a>: Permission denied (publickey)。</p>
+<h3 id="报错一：Permission-denied-权限被拒绝"><a href="#报错一：Permission-denied-权限被拒绝" class="headerlink" title="报错一：Permission denied (权限被拒绝)"></a>报错一：Permission denied (权限被拒绝)</h3><p>第一次执行部署命令时，终端报错：<a href="mailto:&#x67;&#x69;&#116;&#64;&#x67;&#105;&#116;&#104;&#117;&#98;&#46;&#x63;&#x6f;&#x6d;">git@github.com</a>: Permission denied (publickey)。</p>
 <p>原因： 这是因为我的电脑（新环境）没有配置 SSH 密钥，GitHub 无法验证我的身份，所以拒绝了连接。</p>
 <p>解决步骤：</p>
 <p>在 CMD 输入生成密钥的指令</p>
@@ -218,7 +217,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/01/18/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" data-id="cuid0FsUiXl7_Poj4Q5gx2Udh" data-title="如何使用GitHub搭建博客" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/01/18/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" data-id="cuidC3v1L3Oka0XGOOdTCyicY" data-title="如何使用GitHub搭建博客" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
