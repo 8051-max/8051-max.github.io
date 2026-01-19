@@ -97,8 +97,8 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>建立一个独立博客和公众号的想法，最初源于科协学长和依门的指引。在2026年1月17日这个夜晚，我终于付诸行动，耗费数小时完成了从0到1的初建。这第一篇文章，既是对搭建全过程的回溯，也是对我所遇困难与解决思路的总结。以此为起点，开启我的记录之旅。</p>
-<h2 id="一、对-GitHub-的认识、-搭建博客中-GitHub-的作用与Hexo的认识"><a href="#一、对-GitHub-的认识、-搭建博客中-GitHub-的作用与Hexo的认识" class="headerlink" title="一、对 GitHub 的认识、 搭建博客中 GitHub 的作用与Hexo的认识"></a>一、对 GitHub 的认识、 搭建博客中 GitHub 的作用与Hexo的认识</h2><h3 id="1、什么是GitHub"><a href="#1、什么是GitHub" class="headerlink" title="1、什么是GitHub"></a>1、什么是GitHub</h3><p>什么是GitHub呢？在写这篇博客之前我也不清楚，很多开发者只是把它当成一个网盘。在询问 AI ，我得到的理解是：GitHub 是一个基于 Git 的<strong>云端代码托管平台和开发者社区</strong>。在形式上，目前它主要是一个网站（GitHub.com），也提供桌面客户端和移动 App 。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>建立一个独立博客和公众号的想法，最初源于科协学长和依门的建议。在2026年1月17日这个夜晚，我终于付诸行动，耗费数小时完成了从0到1的初建。这第一篇文章，既是对搭建全过程的回溯，也是对我所遇困难与解决思路的总结。以此为起点，开启我的记录之旅。</p>
+<h2 id="一、对-GitHub-的认识、-搭建博客中-GitHub-的作用与Hexo的认识"><a href="#一、对-GitHub-的认识、-搭建博客中-GitHub-的作用与Hexo的认识" class="headerlink" title="一、对 GitHub 的认识、 搭建博客中 GitHub 的作用与Hexo的认识"></a>一、对 GitHub 的认识、 搭建博客中 GitHub 的作用与Hexo的认识</h2><h3 id="1、什么是GitHub"><a href="#1、什么是GitHub" class="headerlink" title="1、什么是GitHub"></a>1、什么是GitHub</h3><p>什么是GitHub呢？在写这篇博客之前我也不清楚，很多开发者只是把它当成一个网盘。在询问 AI 后，我得到的理解是：GitHub 是一个基于 Git 的<strong>云端代码托管平台和开发者社区</strong>。在形式上，目前它主要是一个网站（GitHub.com），也提供桌面客户端和移动 App 。</p>
 <p>如果说百度网盘是用来存电影和文档的云端仓库，那么 GitHub 就是专门用来存代码和工程项目的云端保险柜。但它不仅仅是仓库，它更像是一个<strong>程序员的社交媒体</strong>。在这里，全世界的开发者把自己的代码开源，其他人可以学习、点赞或者帮忙修改。</p>
 <h3 id="2、搭建博客中-GitHub-的作用"><a href="#2、搭建博客中-GitHub-的作用" class="headerlink" title="2、搭建博客中 GitHub 的作用"></a>2、搭建博客中 GitHub 的作用</h3><p>在 Hexo 搭建的过程中，GitHub 主要有两个作用：</p>
 <p>代码仓库：它存着那些执行 hexo d 后推上来的网页文件。</p>
@@ -181,7 +181,7 @@
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:GitHub账号名称/GitHub账号名称.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
 
 <p><code>type: git</code>：<br>​含义：运输方式。<br>​解释：告诉 Hexo，使用 Git 协议来发货。这就激活了我们刚才安装的那个 hexo-deployer-git 插件。</p>
-<p><code>​repo: ...</code>：<br>​含义：收货地址。<br>​解释：<a href="mailto:&#x67;&#105;&#x74;&#64;&#x67;&#x69;&#x74;&#104;&#x75;&#98;&#46;&#x63;&#x6f;&#x6d;">git@github.com</a>:github账号名称&#x2F;github账号名称.github.io.git 是我们 GitHub 仓库的 SSH 地址。这告诉插件：“把生成的网页文件，全部推送到 GitHub 上名为github账号名称的那个仓库里去。”</p>
+<p><code>​repo: ...</code>：<br>​含义：收货地址。<br>​解释：<a href="mailto:&#x67;&#x69;&#x74;&#64;&#x67;&#x69;&#116;&#x68;&#117;&#x62;&#x2e;&#99;&#x6f;&#x6d;">git@github.com</a>:github账号名称&#x2F;github账号名称.github.io.git 是我们 GitHub 仓库的 SSH 地址。这告诉插件：“把生成的网页文件，全部推送到 GitHub 上名为github账号名称的那个仓库里去。”</p>
 <p><code>​branch: main</code>：<br>​含义：货架&#x2F;分支。<br>​解释：告诉 GitHub，“请把这些文件放在 main 这个主分支上展示。”</p>
 <p>注意：type: 前面要有 2个空格 的缩进，冒号后面也要有 1个空格。直接复制上面这段最稳妥。<br>保存文件，然后关闭记事本。</p>
 <h3 id="4、-呼叫主程序并部署到网页"><a href="#4、-呼叫主程序并部署到网页" class="headerlink" title="4、 呼叫主程序并部署到网页"></a>4、 呼叫主程序并部署到网页</h3><p>输入 <code>hexo d</code></p>
@@ -193,7 +193,7 @@
 <p>在之后写博客时，我们常用<code>hexo cl &amp;&amp; hexo g -d</code></p>
 <p>(先清理缓存 Clean，再生成 Generate，最后部署 Deploy。这是最干净、最不容易报错的流程。)</p>
 <h2 id="五、实际部署时遇到的两个报错"><a href="#五、实际部署时遇到的两个报错" class="headerlink" title="五、实际部署时遇到的两个报错"></a>五、实际部署时遇到的两个报错</h2><p>在配置完 _config.yml 后，我运行 <code>hexo d</code> 进行部署，期间遇到了两个报错。这里记录一下排查和解决的过程。</p>
-<h3 id="报错一：Permission-denied-权限被拒绝"><a href="#报错一：Permission-denied-权限被拒绝" class="headerlink" title="报错一：Permission denied (权限被拒绝)"></a>报错一：Permission denied (权限被拒绝)</h3><p>第一次执行部署命令时，终端报错：<a href="mailto:&#x67;&#x69;&#116;&#64;&#x67;&#105;&#116;&#104;&#117;&#98;&#46;&#x63;&#x6f;&#x6d;">git@github.com</a>: Permission denied (publickey)。</p>
+<h3 id="报错一：Permission-denied-权限被拒绝"><a href="#报错一：Permission-denied-权限被拒绝" class="headerlink" title="报错一：Permission denied (权限被拒绝)"></a>报错一：Permission denied (权限被拒绝)</h3><p>第一次执行部署命令时，终端报错：<a href="mailto:&#x67;&#x69;&#116;&#64;&#103;&#x69;&#116;&#104;&#117;&#x62;&#x2e;&#99;&#x6f;&#x6d;">git@github.com</a>: Permission denied (publickey)。</p>
 <p>原因： 这是因为我的电脑（新环境）没有配置 SSH 密钥，GitHub 无法验证我的身份，所以拒绝了连接。</p>
 <p>解决步骤：</p>
 <p>在 CMD 输入生成密钥的指令</p>
@@ -212,7 +212,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/01/18/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" data-id="cuidC3v1L3Oka0XGOOdTCyicY" data-title="如何使用GitHub搭建博客" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/01/18/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" data-id="cuid45tuffHv75RZoOf_0h8O2" data-title="如何使用GitHub搭建博客" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -274,7 +274,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/01/17/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%97%A5%E5%BF%97/" data-id="cuidEihbPAQPI2YA0h6LJQIsu" data-title="博客发布测试" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/01/17/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%97%A5%E5%BF%97/" data-id="cuidueB-kTEawLn6EM8tTvEHd" data-title="博客发布测试" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -327,7 +327,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/01/17/hello-world/" data-id="cuidhktpGHftMmsPs-QZtla2I" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/01/17/hello-world/" data-id="cuidVNjJXUTOdsUVS8-KD94au" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
